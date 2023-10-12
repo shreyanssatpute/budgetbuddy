@@ -1,0 +1,170 @@
+
+
+body{
+  background-color: #5a659e;
+  
+}
+.container {
+  display: flex;
+  justify-content: space-between;
+  margin: 20px;
+  padding: 10px;
+  border-radius: 5px;
+  min-height: 83vh;
+  font-family: 'Courier New', Courier, monospace;
+  scroll-behavior: smooth;
+}
+
+.left-panel {
+  width: 60%;
+  display: flex;
+  flex-direction: column;
+}
+
+.right-panel {
+  width: 40%;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  margin-left: 20px;
+  padding-right: 20px;
+}
+
+.widget {
+  margin-bottom: 10px;
+}
+
+.widget label {
+  display: block;
+  margin-bottom: 5px;
+}
+
+.widget input[type="number"],
+.widget input[type="text"],
+.widget select {
+  padding: 5px;
+  border: 1px solid #ccc;
+  border-radius: 10px;
+  box-sizing: border-box;
+  width: 100%;
+}
+
+.widget button {
+  padding: 5px 10px;
+  background-color: #4CAF50;
+  color: white;
+  border: none;
+  cursor: pointer;
+  border-radius: 10px;
+  width: 100%;
+  
+}
+
+.transaction-history {
+  margin-top: 9px;
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 10px;
+  min-height: 137px;
+  max-height: 137px;
+  overflow-y: auto;
+  background-color: rgb(212, 214, 227);
+}
+
+
+.transaction-history h2 {
+  margin-top: 5px;
+  margin-bottom: 10px;
+}
+
+#transaction-list {
+  list-style-type: none;
+  padding: 0;
+  margin: 0;
+}
+
+.transaction-card {
+  display: inline-block;
+  background-color: #f9f9f9;
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 10px;
+  margin-right: 10px;
+  min-width: 90%;
+}
+
+.transaction-card:last-child {
+  margin-right: 0;
+}
+
+.transaction-card .edit-btn {
+  color: blue;
+  font-weight: bold;
+}
+
+.transaction-card .delete-btn {
+  color: red;
+  font-weight: bold;
+}
+
+.chart-container {
+  margin-top: 0px;
+  width: 95%;
+  height: 200px;
+  padding: 20px;
+  border: 1px solid #ccc;
+  border-radius: 10px;
+  background-color: rgb(212, 214, 227);
+}
+
+.chart1-container {
+  margin-top: 10px;
+  width: 95%;
+  height: 318px;
+  padding: 20px;
+  border: 1px solid #ccc;
+  border-radius: 10px;
+  background-color: rgb(212, 214, 227);
+}
+
+.goal-chart-container {
+  display: flex;
+  flex-direction: column;
+  margin-top: 10px;
+}
+
+.goal-chart-container .input-box {
+  margin-bottom: 10px;
+}
+
+.goal-chart-container .chart-container {
+  width: 100%;
+  height: 200px;
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 10px;
+}
+
+/* Your existing CSS */
+
+@media (max-width: 768px) {
+  .container {
+    flex-direction: column;
+    display: block;
+  }
+  
+  .left-panel,
+  .right-panel {
+    width: 100%;
+    margin-left: 0;
+    padding-right: 0;
+  }
+  
+  
+  .chart-container{
+    width:92%; /* Make chart-container the same width as transaction-history */
+  }
+  .chart1-container{
+    width: 92%;
+  }
+}

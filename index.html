@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Budget Tracker</title>
+  <link rel="stylesheet" type="text/css" href="style.css">
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+  <style>
+    @media (min-width: 1468px) {
+  body {
+    width: 1468px;
+    margin: 0 auto;
+  }
+}
+    
+    .but{
+      background-color:#4CAF50;
+      color: white;
+      border: none;
+      min-width: 40px;
+      border-radius: 10px;
+     
+    }
+    .te {
+      text-align: center;
+      border-radius: 10px;
+      font-weight: bolder;
+      margin-top: 5px;
+    }
+    .f {
+      font-family: 'Courier New', Courier, monospace;
+      text-align: center;
+      font-size: 25px;
+      color: white;
+    }
+    .acc-info label {
+      font-weight: bold;
+      font-size: 23px;
+    }
+    /* Additional styles */
+    .input-box {
+      padding: 20px;
+      border: 1px solid #ccc;
+      border-radius: 10px;
+      margin-bottom: 20px;
+      background-color: rgb(212, 214, 227);
+    }
+    .input-group {
+      margin-bottom: 10px;
+    }
+    .input-group label {
+      display: block;
+      margin-bottom: 5px;
+    }
+    .input-group input[type="number"],
+    .input-group input[type="text"],
+    .input-group select {
+      padding: 5px;
+      border: 1px solid #ccc;
+      border-radius: 10px;
+      box-sizing: border-box;
+      width: 100%;
+    }
+    .input-group button {
+      padding: 5px 10px;
+      background-color: #4CAF50;
+      color: white;
+      border: none;
+      cursor: pointer;
+      border-radius: 10px;
+      width: 60%;
+      display: block;
+      margin: 0 auto;
+      text-align: center;
+      
+      
+      
+    }
+    .chart1-container {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      margin-top: 10px;
+    }
+    .chart1-container canvas {
+      margin-top: 10px;
+    }
+  </style>
+</head>
+<body>
+  <h1 class="f">Budget Tracker</h1>
+  
+  <div class="container">
+    <div class="left-panel">
+      <div class="input-box">
+        <div class="input-group acc-info">
+          <label for="initial-balance-input"><strong>Acc Info:</strong></label>
+        </div>
+        <div class="input-group">
+          <label for="initial-balance-input">Current Balance:</label>
+          <input type="number" id="initial-balance-input">
+          <br>
+          <br>
+          <button onclick="setInitialBalance()">Set</button>
+        </div>
+        <br>
+        <div class="input-group">
+          <label for="transaction-type">Type:</label>
+          <select id="transaction-type">
+            <option value="add">Add</option>
+            <option value="subtract">Subtract</option>
+          </select>
+        </div>
+        <br>
+        <div class="input-group">
+          <label for="transaction-amount">Amount:</label>
+          <input type="number" id="transaction-amount">
+        </div>
+        <br>
+        <div class="input-group">
+          <label for="transaction-description">Description:</label>
+          <input type="text" id="transaction-description">
+          <br>
+          <br>
+          <button onclick="addTransaction()">Add</button>
+        </div>
+      </div>
+      
+      <div class="transaction-history">
+        <div class="input-group acc-info">
+          <label for="initial-balance-input"><strong>Transaction History:</strong></label>
+        </div>
+        <ul id="transaction-list"></ul>
+      </div>
+      <br>
+      <br>
+    </div>
+    <div class="right-panel">
+      <div class="chart-container">
+        <canvas id="chart"></canvas>
+      </div>
+    
+      <br>
+      
+      <div class="chart1-container">
+        <div class="te">
+         
+          <label for="goal-input">Goal:</label>
+          <input type="number" id="goal-input">
+          <button class="but"  onclick="setGoal()">+</button>
+        </div>
+        <canvas id="pie-chart"></canvas>
+
+        
+      </div>
+    </div>
+  </div>
+  
+  <script src="script.js"></script>
+</body>
+</html>
